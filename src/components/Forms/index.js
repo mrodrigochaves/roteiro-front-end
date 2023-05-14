@@ -10,7 +10,8 @@ import {
   Card,
   CardBody,
   Text,
-  Checkbox
+  Checkbox,
+  Select
 } from "@chakra-ui/react";
 
 export function Forms() {
@@ -27,6 +28,11 @@ export function Forms() {
         </Box>
       </HStack>
       <HStack spacing="4">
+        <Box w="100%">
+          <Text fontSize='lg' fontWeight='bold' textTransform='uppercase'>Atividade Principal</Text>
+        </Box>
+      </HStack>
+      <HStack spacing="4">
         <Box w="30%">
           <FormLabel htmlFor="natural">CNAE</FormLabel>
           <Input id="cnae" />
@@ -35,9 +41,13 @@ export function Forms() {
           <FormLabel htmlFor="nome">Descrição </FormLabel>
           <Input id="description" />
         </Box>
-        <Box w="30%">
+        <Box w="35%">
           <FormLabel htmlFor="nome">Grau de Risco </FormLabel>
-          <Input id="grau" />
+          <Select placeholder='Escolha uma opção'>
+            <option value='low'>Baixo Risco</option>
+            <option value='medium'>Médio Risco</option>
+            <option value='high'>Alto Risco</option>
+          </Select>
         </Box>
         <Box>
           <FormLabel>Exerce atividade no local?</FormLabel>
@@ -127,45 +137,45 @@ export function Forms() {
       <HStack spacing="4">
         <Box w="100%">
           <FormLabel>Conclusão</FormLabel>
-          <RadioGroup defaultValue="Baixo">
+          <RadioGroup defaultValue="low">
             <HStack spacing="24px">
-              <Radio value="Baixo">Baixo Risco</Radio>
-              <Radio value="Médio">Médio Risco</Radio>
-              <Radio value="Alto">Alto Risco</Radio>
+              <Radio value="low">Baixo Risco</Radio>
+              <Radio value="medium">Médio Risco</Radio>
+              <Radio value="high">Alto Risco</Radio>
             </HStack>
           </RadioGroup>
         </Box>
       </HStack>
-      <HStack direction='row'  spacing='24px'>
+      <HStack direction='row' spacing='24px'>
         <Box>
-        <Button
-          w={240}
-          p="6"
-          type="submit"
-          bg="blue.600"
-          color="white"
-          fontWeight="bold"
-          fontSize="xl"
-          mt="2"
-          _hover={{ bg: "blue.800" }}
-        >
-          Enviar
-        </Button>
+          <Button
+            w={240}
+            p="6"
+            type="submit"
+            bg="blue.600"
+            color="white"
+            fontWeight="bold"
+            fontSize="xl"
+            mt="2"
+            _hover={{ bg: "blue.800" }}
+          >
+            Salvar
+          </Button>
         </Box>
         <Box>
-        <Button
-          w={240}
-          p="6"
-          type="submit"
-          bg="blue.400"
-          color="white"
-          fontWeight="bold"
-          fontSize="xl"
-          mt="2"
-          _hover={{ bg: "blue.700" }}
-        >
-          Imprimir
-        </Button>
+          <Button
+            w={240}
+            p="6"
+            type="submit"
+            bg="blue.400"
+            color="white"
+            fontWeight="bold"
+            fontSize="xl"
+            mt="2"
+            _hover={{ bg: "blue.700" }}
+          >
+            Imprimir
+          </Button>
         </Box>
       </HStack>
     </FormControl >
