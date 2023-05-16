@@ -8,9 +8,13 @@ import {
   Radio,
   Button,
   Card,
+  CardHeader,
   CardBody,
   Text,
   Checkbox,
+  Heading,
+  Stack,
+  StackDivider,
   Select
 } from "@chakra-ui/react";
 
@@ -79,24 +83,40 @@ export function Forms() {
         </Box>
       </HStack>
       <HStack>
-        <Card spacing={[2, 5]} direction={['column', 'row']}>
-          <CardBody>
-            <Text pt='2' fontSize='sm'>Pergunta 1 - Haverá o desenvolvimento de softwares que realizam ou influenciam diretamente no diagnóstico, monitoramento, terapia(tratamento) para saúde? </Text>
-            <Text pt='2' fontSize='sm'>Resposta: </Text>
-            <Checkbox spacing='10px' size='md' colorScheme='blue' >
-              Sim
-            </Checkbox>
-            <Checkbox spacing='10px' size='md' colorScheme='blue' >
-              Alto Risco
-            </Checkbox>
-            <Checkbox spacing='10px' size='md' colorScheme='blue' >
-              Não
-            </Checkbox>
-            <Checkbox spacing='10px' size='md' colorScheme='blue' >
-              Baixo Risco
-            </Checkbox>
-          </CardBody>
-        </Card>
+      <Card>
+  <CardHeader>
+    <Heading size='md'>Client Report</Heading>
+  </CardHeader>
+
+  <CardBody>
+    <Stack divider={<StackDivider />} spacing='4'>
+      <Box>
+        <Heading size='xs' textTransform='uppercase'>
+          Summary
+        </Heading>
+        <Text pt='2' fontSize='sm'>
+          View a summary of all your clients over the last month.
+        </Text>
+      </Box>
+      <Box>
+        <Heading size='xs' textTransform='uppercase'>
+          Overview
+        </Heading>
+        <Text pt='2' fontSize='sm'>
+          Check out the overview of your clients.
+        </Text>
+      </Box>
+      <Box>
+        <Heading size='xs' textTransform='uppercase'>
+          Analysis
+        </Heading>
+        <Text pt='2' fontSize='sm'>
+          See a detailed analysis of all your business clients.
+        </Text>
+      </Box>
+    </Stack>
+  </CardBody>
+</Card>
       </HStack>
       <HStack>
         <Box w="100%">
@@ -144,6 +164,26 @@ export function Forms() {
               <Radio value="high">Alto Risco</Radio>
             </HStack>
           </RadioGroup>
+        </Box>
+      </HStack>
+      <HStack>
+        <Box>
+        <Card>
+  <CardBody>
+    <Stack divider={<StackDivider />} spacing='4'>
+      <Box>
+        <Heading size='xs' textTransform='uppercase'>
+          Assinatura do RT
+        </Heading>
+        </Box>
+        <Box>
+        <Text pt='2' fontSize='sm'>
+          ------------------------------------------
+        </Text>
+      </Box>
+    </Stack>
+  </CardBody>
+</Card>
         </Box>
       </HStack>
       <HStack direction='row' spacing='24px'>
